@@ -22,4 +22,4 @@ app.get('/', async (req, res) => {
     res.status(500).send("Something went wrong");
   }
 });
-app.listen(5000, () => console.log('Server running on http://localhost:5000'));
+app.listen(5000, () => console.log(`Server running on ${process.env.PORT}`));

@@ -10,13 +10,11 @@ router.get('/', async (req, res) => {
                 users.id,
                 users.name,
                 users.email,
-                users.created_at,
-                users.last_login,
-                COUNT(posts.id) as post_count
+                users.created_at
+                
+                
             FROM users 
-            LEFT JOIN posts ON users.id = posts.user_id 
-            GROUP BY users.id, users.name, users.email, users.created_at, users.last_login
-            ORDER BY users.created_at DESC
+           
         `);
 
         res.json(result.rows);
