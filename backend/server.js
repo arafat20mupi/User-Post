@@ -13,6 +13,13 @@ const usersRoutes = require('./routes/users');
 
 app.use('/api', authRoutes);
 app.use('/api/posts', postRoutes);
-app.use("/api/users" ,usersRoutes)
+app.use("/api/users", usersRoutes)
 
+app.get('/', async (req, res) => {
+  try {
+    res.send("Server is running successfully!");
+  } catch (error) {
+    res.status(500).send("Something went wrong");
+  }
+});
 app.listen(5000, () => console.log('Server running on http://localhost:5000'));
