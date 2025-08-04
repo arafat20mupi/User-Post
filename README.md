@@ -36,10 +36,10 @@ A full-stack social media application built with Node.js, Express, PostgreSQL, a
 ### 1. Clone the repository
 ```bash
 git clone <repository-url>
-cd userpost-app
+cd userpost
 ```
 
-### 2. Install dependencies
+### 2. Install dependencies in Backend Folder
 ```bash
 npm install
 ```
@@ -68,15 +68,11 @@ npm run setup-db
 ### 5. Start the application
 ```bash
 # Development mode
-npm run dev
+node server.js
 
-# Production mode
-npm start
-```
 
 ### 6. Access the application
-- Frontend: http://localhost:5000
-- API: http://localhost:5000/api
+- API: http://localhost:5000
 
 ## 📚 API Documentation
 
@@ -90,11 +86,10 @@ npm start
 ### Posts Endpoints
 - `GET /api/posts` - Get all posts (with pagination)
 - `GET /api/posts/:id` - Get single post
-- `GET /api/posts/user/:userId` - Get posts by user
+- `DELETE /api/posts/:id` - Get posts by user
+- `GET /api/posts/:id` - Get single post
+- `DELETE /api/posts/:id` - Get posts by user
 - `POST /api/posts` - Create new post
-- `PUT /api/posts/:id` - Update post (owner only)
-- `DELETE /api/posts/:id` - Delete post (owner only)
-- `GET /api/posts/search/:query` - Search posts
 
 ### Users Endpoints
 - `GET /api/users` - Get all users with post counts
@@ -152,17 +147,15 @@ npm run test:coverage
 ## 📁 Project Structure
 
 ```
-userpost-app/
+backend/
 ├── server.js              # Main server file
 ├── db.js                  # Database configuration
 ├── routes/
 │   ├── auth.js           # Authentication routes
 │   ├── posts.js          # Posts routes
 │   └── users.js          # Users routes
-├── scripts/
-│   ├── setup-database.js # Database setup script
-│   └── setup-database.sql # SQL setup file
-├── public/               # Frontend files
+
+├── frontend/               # Frontend files
 │   ├── index.html
 │   ├── login.html
 │   ├── register.html
